@@ -1,2 +1,2 @@
-public class aliens {
+public class aliens extends GraphicsObject {
 }
