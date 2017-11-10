@@ -1,19 +1,19 @@
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.Random;
+import java.lang.Math;
 
 public class Player extends GraphicsObject {
     int width;
     int height;
 
-    public Player(int x, int y) {
+    public Player(double x, double y) {
         super(x, y);        }
 
         public void draw(Graphics g) {
             // change the color of the pen
             g.setColor(Color.red);
             // draw the rectangle
-            g.fillRect(this.x, this.y, 10, 20);
+            g.fillRect((int)Math.round(this.x), (int)Math.round(this.y) , 10, 20);
         }
 
         /* Update the state of the rectangle
