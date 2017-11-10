@@ -16,13 +16,7 @@ public class Player extends GraphicsObject {
             g.fillRect((int)Math.round(this.x), (int)Math.round(this.y) , 10, 20);
         }
 
-        /* Update the state of the rectangle
-         *
-         * @param pic_width  The width of the canvas
-         * @param pic_height The height of the canvas
-         * @param frame      The number of frames since the start of the animation
-         */
-        @Override
+
         public void update(int pic_width, int pic_height, int frame) {
             // this will make rectangles bounce off the side of the window
             if (this.x < 0 || this.x + this.width > pic_width) {
