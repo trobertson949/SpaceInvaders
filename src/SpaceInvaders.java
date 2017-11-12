@@ -144,9 +144,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            // FIXME what happens when left arrow is pressed
+            // player.speed_x = -10
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            // FIXME what happens when right arrow is pressed
+            // player.speed_x = 10
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             // FIXME what happens when space bar is pressed
         }
