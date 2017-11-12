@@ -3,8 +3,10 @@ import java.awt.Graphics;
 import java.lang.Math;
 
 public class Alien extends GraphicsObject {
+    Color color;
     int width;
     int height;
+
 
     public Alien (double x, double y) {
         super(x, y);        }

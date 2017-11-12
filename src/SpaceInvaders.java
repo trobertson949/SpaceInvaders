@@ -31,6 +31,13 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Timer timer;
     private int frame = 0;
 
+    public class SpaceInvaders{
+        Player player;
+    }
+    private final int player_width;
+    private final int player_height;
+    private final Color player_color;
+
     // FIXME list your game objects here
     
 
@@ -47,6 +54,15 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         this.timer = new Timer(msPerFrame, this);
 
         // FIXME initialize your game objects
+    }
+
+    public Player(){
+        this.player_width = 20;
+        this.player_height = 25;
+        this.player_color = Color.RED;
+        setPreferredSize(new Dimension(this.player_width,this.player_height));
+
+        this.timer = new Timer(msPerFrame, this);
     }
 
     /* Start the game

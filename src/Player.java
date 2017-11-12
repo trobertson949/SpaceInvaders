@@ -3,12 +3,20 @@ import java.awt.Graphics;
 import java.lang.Math;
 
 public class Player extends GraphicsObject {
-    public int width = 10;
-    public int height = 20;
+    Color player_color;
+    int player_width;
+    int player_height;
+
+    public Player(double x, double y, Color color, int width, int height) {
+       super();
+       this.color = color;
+       this.width = width;
+       this.height = height;
+    }
 
    public void draw(Graphics g) {
             // change the color of the pen
-            g.setColor(Color.red);
+            g.setColor(this.color);
             // draw the rectangle
             g.fillRect((int)Math.round(this.x), (int)Math.round(this.y) , width, height;
         }
