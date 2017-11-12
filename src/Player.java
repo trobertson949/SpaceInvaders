@@ -3,17 +3,14 @@ import java.awt.Graphics;
 import java.lang.Math;
 
 public class Player extends GraphicsObject {
-    int width;
-    int height;
+    public int width = 10;
+    public int height = 20;
 
-    public Player(double x, double y) {
-        super(x, y);        }
-
-        public void draw(Graphics g) {
+   public void draw(Graphics g) {
             // change the color of the pen
             g.setColor(Color.red);
             // draw the rectangle
-            g.fillRect((int)Math.round(this.x), (int)Math.round(this.y) , 10, 20);
+            g.fillRect((int)Math.round(this.x), (int)Math.round(this.y) , width, height;
         }
 
 
