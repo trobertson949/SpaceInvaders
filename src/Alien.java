@@ -1,15 +1,23 @@
+import com.sun.corba.se.impl.orbutil.graph.Graph;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.lang.Math;
 
 public class Alien extends GraphicsObject {
-    Color color;
-    int width;
-    int height;
+    Color alien_color;
+    int alien_width;
+    int alien_height;
 
 
     public Alien (double x, double y) {
-        super(x, y);        }
+        super(x, y);
+        alien_color = Color.red;
+        alien_width = 20;
+        alien_height = 20;
+    }
+
+    Alien green_alien = new Alien();
 
     public void draw(Graphics g) {
         // change the color of the pen
