@@ -184,7 +184,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @returns  true if the player has won, false otherwise
      */
     private boolean hasWonGame() {
-        return true; // FIXME delete this when ready
+        return false; // FIXME delete this when ready
     }
 
     /* Paint the screen during normal gameplay
