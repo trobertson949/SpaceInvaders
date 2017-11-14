@@ -34,7 +34,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Player me;
 
     private Alien josh;
-
+    private int num_aliens;
     private Projectile shooty;
 
     private ArrayList<GraphicsObject> objects;
@@ -62,6 +62,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.shooty = new Projectile(me.x, me.y);
         this.objects = new ArrayList<GraphicsObject>();
+
         // FIXME initialize your game objects
     }
 
@@ -168,6 +169,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             shooty.speed_x = 7;
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             shooty.speed_y = -7;
+            //projectile ++;
             // FIXME what happens when space bar is pressed
         }
     }
