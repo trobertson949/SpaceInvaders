@@ -56,15 +56,6 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         // FIXME initialize your game objects
     }
 
-    public Player(){
-        this.player_width = 20;
-        this.player_height = 25;
-        this.player_color = Color.RED;
-        setPreferredSize(new Dimension(this.player_width,this.player_height));
-
-        this.timer = new Timer(msPerFrame, this);
-    }
-
     /* Start the game
      */
     @Override

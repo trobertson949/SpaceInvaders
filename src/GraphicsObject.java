@@ -15,6 +15,13 @@ public class GraphicsObject {
         this.speed_y = 0;
     }
 
+    public GraphicsObject() {
+        this.x = x;
+        this.y = y;
+        this.speed_x = 0;
+        this.speed_y = 0;
+    }
+
     /* Draw the object
      *
      * This function should never be called directly, but should be overridden
