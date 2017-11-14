@@ -36,6 +36,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Alien josh;
 
     private Projectile shooty;
+
+    private ArrayList<GraphicsObject> objects;
     // FIXME list your game objects here
     
 
@@ -57,6 +59,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         this.josh = new Alien(300, 0);
 
         this.shooty = new Projectile(300, 350);
+        this.objects = new ArrayList<GraphicsObject>();
         // FIXME initialize your game objects
     }
 
@@ -168,6 +171,10 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     /* Update the game objects
      */
     private void update() {
+        me.update(this.canvasWidth, this.canvasHeight, frame);
+        for (GraphicsObject obj : this.objects) {
+            obj.update(this.canvasWidth, this.canvasHeight, frame);
+        }
         // FIXME update game objects here
     }
 
