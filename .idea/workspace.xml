@@ -47,9 +47,14 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <state relative-caret-position="17">
               <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+=======
+            <state relative-caret-position="34">
+              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+>>>>>>> master
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,6 +71,7 @@
       <file leaf-file-name="SpaceInvaders.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SpaceInvaders.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="260">
               <caret line="220" column="43" lean-forward="true" selection-start-line="220" selection-start-column="43" selection-end-line="220" selection-end-column="43" />
 =======
@@ -75,12 +81,16 @@
             <state relative-caret-position="216">
               <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
 >>>>>>> Stashed changes
+=======
+            <state relative-caret-position="257">
+              <caret line="187" column="5" lean-forward="true" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+>>>>>>> master
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4648#4649#0" expanded="true" />
-                <element signature="e#4708#4709#0" expanded="true" />
-                <element signature="e#4865#4866#0" expanded="true" />
-                <element signature="e#4924#4925#0" expanded="true" />
+                <element signature="e#4663#4664#0" expanded="true" />
+                <element signature="e#4723#4724#0" expanded="true" />
+                <element signature="e#4880#4881#0" expanded="true" />
+                <element signature="e#4940#4941#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +99,12 @@
       <file leaf-file-name="Alien.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Alien.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <state relative-caret-position="67">
+=======
+            <state relative-caret-position="-174">
+>>>>>>> master
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
 =======
             <state relative-caret-position="148">
@@ -328,7 +342,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -545,6 +559,7 @@
           <folding>
 <<<<<<< Updated upstream
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#4648#4649#0" expanded="true" />
             <element signature="e#4708#4709#0" expanded="true" />
             <element signature="e#4865#4866#0" expanded="true" />
@@ -555,6 +570,12 @@
             <element signature="e#4949#4950#0" expanded="true" />
             <element signature="e#5009#5010#0" expanded="true" />
 >>>>>>> Stashed changes
+=======
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -599,6 +620,7 @@
           <folding>
 <<<<<<< Updated upstream
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#4648#4649#0" expanded="true" />
             <element signature="e#4708#4709#0" expanded="true" />
             <element signature="e#4865#4866#0" expanded="true" />
@@ -609,6 +631,12 @@
             <element signature="e#4949#4950#0" expanded="true" />
             <element signature="e#5009#5010#0" expanded="true" />
 >>>>>>> Stashed changes
+=======
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -628,6 +656,7 @@
           <folding>
 <<<<<<< Updated upstream
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#4648#4649#0" expanded="true" />
             <element signature="e#4708#4709#0" expanded="true" />
             <element signature="e#4865#4866#0" expanded="true" />
@@ -638,6 +667,12 @@
             <element signature="e#4949#4950#0" expanded="true" />
             <element signature="e#5009#5010#0" expanded="true" />
 >>>>>>> Stashed changes
+=======
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -666,6 +701,7 @@
           <folding>
 <<<<<<< Updated upstream
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#4648#4649#0" expanded="true" />
             <element signature="e#4708#4709#0" expanded="true" />
             <element signature="e#4865#4866#0" expanded="true" />
@@ -676,6 +712,12 @@
             <element signature="e#4949#4950#0" expanded="true" />
             <element signature="e#5009#5010#0" expanded="true" />
 >>>>>>> Stashed changes
+=======
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -696,6 +738,7 @@
           <folding>
 <<<<<<< Updated upstream
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#4648#4649#0" expanded="true" />
             <element signature="e#4708#4709#0" expanded="true" />
             <element signature="e#4865#4866#0" expanded="true" />
@@ -706,6 +749,12 @@
             <element signature="e#4949#4950#0" expanded="true" />
             <element signature="e#5009#5010#0" expanded="true" />
 >>>>>>> Stashed changes
+=======
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -742,10 +791,10 @@
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
-            <element signature="e#4865#4866#0" expanded="true" />
-            <element signature="e#4924#4925#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -788,10 +837,10 @@
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
-            <element signature="e#4865#4866#0" expanded="true" />
-            <element signature="e#4924#4925#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
           </folding>
 =======
     <entry file="file://$PROJECT_DIR$/src/GraphicsObject.java">
@@ -856,10 +905,10 @@
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
-            <element signature="e#4865#4866#0" expanded="true" />
-            <element signature="e#4924#4925#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -881,10 +930,10 @@
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
-            <element signature="e#4865#4866#0" expanded="true" />
-            <element signature="e#4924#4925#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -917,10 +966,10 @@
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
-            <element signature="e#4865#4866#0" expanded="true" />
-            <element signature="e#4924#4925#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -943,10 +992,10 @@
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
-            <element signature="e#4865#4866#0" expanded="true" />
-            <element signature="e#4924#4925#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,25 +1022,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aliens.java" />
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/GraphicsObject.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="17">
           <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
 =======
         <state relative-caret-position="148">
           <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
 >>>>>>> Stashed changes
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> master
           <folding>
             <marker date="1510683247962" expanded="true" signature="521:528" ph="{}" />
             <marker date="1510683247962" expanded="true" signature="860:931" ph="{...}" />
@@ -999,9 +1042,27 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+>>>>>>> master
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Alien.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
+        <state relative-caret-position="-174">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
 =======
         <state relative-caret-position="216">
@@ -1015,6 +1076,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SpaceInvaders.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         <state relative-caret-position="260">
           <caret line="220" column="43" lean-forward="true" selection-start-line="220" selection-start-column="43" selection-end-line="220" selection-end-column="43" />
@@ -1033,6 +1095,16 @@
             <element signature="e#4949#4950#0" expanded="true" />
             <element signature="e#5009#5010#0" expanded="true" />
 >>>>>>> Stashed changes
+=======
+        <state relative-caret-position="257">
+          <caret line="187" column="5" lean-forward="true" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="e#4880#4881#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
