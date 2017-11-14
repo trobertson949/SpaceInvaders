@@ -156,9 +156,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            // player.speed_x = -10
+            me.speed_x = -10;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            // player.speed_x = 10
+            me.speed_x = 10;
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             //
             // FIXME what happens when space bar is pressed
@@ -184,13 +184,14 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @returns  true if the player has won, false otherwise
      */
     private boolean hasWonGame() {
-        return false; // FIXME delete this when ready
+        return true; // FIXME delete this when ready
     }
 
     /* Paint the screen during normal gameplay
      *
      * @param g The Graphics for the JPanel
      */
+
     private void paintGameScreen(Graphics g) {
         // FIXME draw game objects here
         this.me.draw(g);
@@ -204,6 +205,14 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @param g The Graphics for the JPanel
      */
     private void paintWinScreen(Graphics g) {
+        super.paintComponent(g);
+        Graphics win = (Graphics) g;
+        win.setColor(Color.yellow);
+        win.fillRect(0, 0, canvasWidth, canvasHeight);
+        win.setColor(Color.black);
+        win.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
+        win.drawString("Congratulations!", canvasWidth/6, canvasHeight/4);
+        win.drawString(":)))) You Win!!!!!", canvasWidth/8, canvasHeight/2);
 
         // FIXME draw the win screen here
     }
