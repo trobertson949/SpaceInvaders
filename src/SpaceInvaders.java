@@ -53,6 +53,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         // set the drawing timer
         this.timer = new Timer(msPerFrame, this);
 
+        Player dakfld = new Player ()
+
         // FIXME initialize your game objects
     }
 
@@ -194,6 +196,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @param g The Graphics for the JPanel
      */
     private void paintWinScreen(Graphics g) {
+        g.setColor(Color.yellow);
+        g.fillOval(0, 0, canvasWidth, canvasHeight)
         // FIXME draw the win screen here
     }
 
