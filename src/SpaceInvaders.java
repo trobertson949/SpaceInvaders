@@ -159,11 +159,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            me.speed_x = -10;
+            me.speed_x = -7;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            me.speed_x = 10;
+            me.speed_x = 7;
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            //
+            shooty.speed_y = -7;
             // FIXME what happens when space bar is pressed
         }
     }
@@ -172,6 +172,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     private void update() {
         me.update(this.canvasWidth, this.canvasHeight, frame);
+        shooty.update(this.canvasWidth, this.canvasHeight, frame);
         for (GraphicsObject obj : this.objects) {
             obj.update(this.canvasWidth, this.canvasHeight, frame);
         }
