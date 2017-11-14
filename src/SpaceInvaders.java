@@ -34,6 +34,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Player me;
 
     private Alien josh;
+
+    private Projectile shooty;
     // FIXME list your game objects here
     
 
@@ -43,7 +45,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         // fix the window size and background color
         this.canvasWidth = 600;
         this.canvasHeight = 400;
-        this.backgroundColor = Color.WHITE;
+        this.backgroundColor = Color.BLACK;
         setPreferredSize(new Dimension(this.canvasWidth, this.canvasHeight));
 
         // set the drawing timer
@@ -54,6 +56,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         //loop here
         this.josh = new Alien(300, 0);
 
+        this.shooty = new Projectile(300, 350);
         // FIXME initialize your game objects
     }
 
@@ -191,6 +194,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         // FIXME draw game objects here
         this.me.draw(g);
         this.josh.draw(g);
+        this.shooty.draw(g);
 
     }
 
