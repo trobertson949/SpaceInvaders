@@ -160,6 +160,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             // player.speed_x = 10
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            //
             // FIXME what happens when space bar is pressed
         }
     }
@@ -203,8 +204,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @param g The Graphics for the JPanel
      */
     private void paintWinScreen(Graphics g) {
-        g.setColor(Color.yellow);
-        g.fillOval(0, 0, canvasWidth, canvasHeight);
+
         // FIXME draw the win screen here
     }
 
@@ -213,6 +213,15 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @param g The Graphics for the JPanel
      */
     private void paintLoseScreen(Graphics g) {
+        Font tr = new Font("Dialog", Font.PLAIN, 20);
+        Font trb = new Font("Dialog", Font.BOLD, 48);
+        g.setColor(Color.yellow);
+        g.fillOval(0, 0, canvasWidth, canvasHeight);
+        g.setColor(Color.BLACK);
+        g.setFont(trb);
+        g.drawString("CONGRATULATIONS!!", 8, 180);
+        g.setFont(tr);
+        g.drawString("You lost :(", 250, 220);
         // FIXME draw the game over screen here
     }
 
