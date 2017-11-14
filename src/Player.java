@@ -24,7 +24,6 @@ public class Player extends GraphicsObject {
 
 
     public void update(int pic_width, int pic_height, int frame) {
-        System.out.println("hello");
         // this will make rectangles bounce off the side of the window
 
         if (this.x < 0 || this.x + this.player_width > pic_width) {
@@ -36,7 +35,6 @@ public class Player extends GraphicsObject {
 
             // let the superclass' update function handle the actual changes to x and y
             super.update(pic_width, pic_height, frame);
-            System.out.println("hey");
 
         }
 
