@@ -52,7 +52,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         this.me = new Player(300, 375);
 
         //loop here
-        // this.josh = new Alien();
+        this.josh = new Alien(300, 0);
 
         // FIXME initialize your game objects
     }
@@ -190,6 +190,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private void paintGameScreen(Graphics g) {
         // FIXME draw game objects here
         this.me.draw(g);
+        this.josh.draw(g);
 
     }
 

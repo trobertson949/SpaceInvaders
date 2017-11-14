@@ -12,17 +12,17 @@ public class Alien extends GraphicsObject {
 
     public Alien (double x, double y) {
         super(x, y);
-        alien_color = Color.red;
-        alien_width = 20;
-        alien_height = 20;
+        alien_color = Color.green;
+        alien_width = 30;
+        alien_height = 30;
     }
 
 
     public void draw(Graphics g) {
         // change the color of the pen
-        g.setColor(Color.green);
+        g.setColor(this.alien_color);
         // draw the rectangle
-        g.fillRect((int)Math.round(this.x), (int)Math.round(this.y) , 10, 20);
+        g.fillRect((int)Math.round(this.x), (int)Math.round(this.y) , this.alien_width, this.alien_height);
     }
 
 
