@@ -53,8 +53,10 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.me = new Player(300, 375);
 
-        //loop here
-        this.josh = new Alien(300, 0);
+        while (num_aliens < 20) {
+            this.josh = new Alien(300, 0);
+            num_aliens += 1;
+        }
 
         this.shooty = new Projectile(300, 350);
         // FIXME initialize your game objects
