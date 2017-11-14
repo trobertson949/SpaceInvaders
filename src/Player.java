@@ -7,14 +7,8 @@ public class Player extends GraphicsObject {
     int player_width;
     int player_height;
 
-    public Player(double x, double y, Color color, int width, int height) {
-       super(x, y);
-       this.player_color = color;
-       this.player_width = width;
-       this.player_height = height;
-    }
-
-    public Player(){
+    public Player(double x, double y){
+        super(x, y);
         this.player_width = 20;
         this.player_height = 25;
         this.player_color = Color.RED;

@@ -31,13 +31,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Timer timer;
     private int frame = 0;
 
-    public class SpaceInvaders{
-        Player player;
-    }
-    private final int player_width;
-    private final int player_height;
-    private final Color player_color;
+    private Player me;
 
+    private Alien josh;
     // FIXME list your game objects here
     
 
@@ -53,10 +49,14 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         // set the drawing timer
         this.timer = new Timer(msPerFrame, this);
 
-        Player dakfld = new Player ()
+        this.me = new Player(300, 375);
+
+        //loop here
+        // this.josh = new Alien();
 
         // FIXME initialize your game objects
     }
+
 
     /* Start the game
      */
@@ -189,6 +189,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     private void paintGameScreen(Graphics g) {
         // FIXME draw game objects here
+        this.me.draw(g);
+
     }
 
     /* Paint the screen when the player has won
@@ -197,7 +199,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     private void paintWinScreen(Graphics g) {
         g.setColor(Color.yellow);
-        g.fillOval(0, 0, canvasWidth, canvasHeight)
+        g.fillOval(0, 0, canvasWidth, canvasHeight);
         // FIXME draw the win screen here
     }
 
