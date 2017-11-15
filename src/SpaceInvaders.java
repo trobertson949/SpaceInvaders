@@ -34,6 +34,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Player me;
 
     private ArrayList<Alien> joshi;
+    private ArrayList<Alien> conner;
+    private ArrayList<Alien> goldhammer;
+    private ArrayList<Alien> haterz;
 
     private Projectile shooty;
 
@@ -62,6 +65,33 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             joshi.add(new Alien(30 + i, 0));
             num_aliens += 1;
             i += 40;
+        }
+
+        this.conner = new ArrayList<>();
+        int sproot = 0;
+        int toot = 30;
+        while (sproot < 10) {
+            conner.add(new Alien(30 + toot, 0));
+            sproot += 1;
+            toot += 40;
+        }
+
+        this.goldhammer = new ArrayList<>();
+        int poop = 0;
+        int ploop = 30;
+        while (poop < 10) {
+            goldhammer.add(new Alien(30 + ploop, 0));
+            poop += 1;
+            ploop += 40;
+        }
+
+        this.haterz = new ArrayList<>();
+        int alienz = 0;
+        int spaceinbetween = 30;
+        while (alienz < 10) {
+            haterz.add(new Alien(30 + spaceinbetween, 0));
+            alienz += 1;
+            spaceinbetween += 40;
         }
 
         this.shooty = new Projectile(me.x, me.y);
@@ -181,6 +211,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private void update() {
         me.update(this.canvasWidth, this.canvasHeight, frame);
         shooty.update(this.canvasWidth, this.canvasHeight, frame);
+        for (Alien s : this.joshi){
+            s.update(this.canvasWidth, this.canvasHeight, frame);
+        }
         for (GraphicsObject obj : this.objects) {
             obj.update(this.canvasWidth, this.canvasHeight, frame);
         }
@@ -215,6 +248,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             s.draw(g);
         }
         this.shooty.draw(g);
+        
 
     }
 
