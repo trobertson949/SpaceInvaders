@@ -55,8 +55,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.me = new Player(300, 375);
 
-        while (num_aliens < 20) {
-            this.josh = new Alien(300, 0);
+        this.joshi = new ArrayList<>();
+        int num_aliens = 0;
+        int i = 30;
+        while (num_aliens < 10) {
+            joshi.add(new Alien(30 + i, 0));
             num_aliens += 1;
         }
 
@@ -209,7 +212,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private void paintGameScreen(Graphics g) {
         // FIXME draw game objects here
         this.me.draw(g);
-        this.josh.draw(g);
+        for (Alien s: joshi) {
+            s.draw(g);
+        }
         this.shooty.draw(g);
 
     }
