@@ -220,6 +220,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         for (GraphicsObject obj : this.objects) {
             obj.update(this.canvasWidth, this.canvasHeight, frame);
         }
+        if (joshi.get(0).y + this.alien_height > 120) {
+            for (Alien w : this.conner){
+                w.update(this.canvasWidth, this.canvasHeight, frame);
+            }
+        }
 
         // FIXME update game objects here
     }
@@ -261,6 +266,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             s.draw(g);
         }
         this.shooty.draw(g);
+        if (joshi.get(0).y + this.alien_height > 120) {
+            for (Alien w : conner) {
+                w.draw(g);
+            }
+        }
 
 
     }
