@@ -61,6 +61,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         while (num_aliens < 10) {
             joshi.add(new Alien(30 + i, 0));
             num_aliens += 1;
+            i += 40;
         }
 
         this.shooty = new Projectile(me.x, me.y);
