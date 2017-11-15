@@ -28,12 +28,10 @@ public class Alien extends GraphicsObject {
 
     public void update(int pic_width, int pic_height, int frame) {
         // this will make rectangles bounce off the side of the window
-        if (this.x < 0 || this.x + this.alien_width > pic_width) {
-            this.speed_x = -this.speed_x;
-        }
-        if (this.y < 0 || this.y + this.alien_height > pic_height) {
-            this.speed_y = -this.speed_y;
-        }
+        this.y += 1;
+        //if (this.y + this.alien_height > pic_height) {
+            //when it touches the bottom show lose screen
+        //}
 
         // let the superclass' update function handle the actual changes to x and y
         super.update(pic_width, pic_height, frame);
