@@ -32,6 +32,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private int frame = 0;
 
     private Player me;
+    public int alien_height;
 
     private ArrayList<Alien> joshi;
     private ArrayList<Alien> conner;
@@ -96,6 +97,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.shooty = new Projectile(me.x, me.y);
         this.objects = new ArrayList<GraphicsObject>();
+
         // FIXME initialize your game objects
     }
 
@@ -202,6 +204,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             shooty.speed_x = 7;
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             shooty.speed_y = -7;
+            //projectile ++;
             // FIXME what happens when space bar is pressed
         }
     }
@@ -226,8 +229,17 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @returns  true if the player has lost, false otherwise
      */
     private boolean hasLostGame() {
+        if (joshi != null && !joshi.isEmpty()) {
+            if (joshi.get(0).y + this.alien_height > canvasHeight) {
+                return true;
+            }
+            //when it touches the bottom show lose screen
+            //}
+
+        }
         return false; // FIXME delete this when ready
     }
+
 
     /* Check if the player has won the game
      * 
