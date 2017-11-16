@@ -218,7 +218,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         for (Alien x : this.joshi){
             x.update(this.canvasWidth, this.canvasHeight, frame);
             for (Projectile w : this.shooty) {
-                if ()
+            if ()
             }
         }
         for (Alien s : this.joshi){
@@ -231,7 +231,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     }
 
     /* Check if the player has lost the game
-     * 
+     *
      * @returns  true if the player has lost, false otherwise
      */
     private boolean hasLostGame() {
@@ -246,9 +246,17 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         return false; // FIXME delete this when ready
     }
 
-    private boolean Projectile_touching_Alien(Alien, Projectile){
-        if Alien(Green,)
-        return true;
+    private boolean Projectile_touching_Alien(Alien, Projectile) {
+        for (int i = 0; i < Alien.size(); i++) {
+            return Alien.get(i);
+            for (int j = 0; j < shooty.size(); j++) {
+                return shooty.get(j);
+                if (shooty.get(j) == Alien.get(i)) ;
+                {
+                    return true;
+                }
+            }
+        }
     }
 
     /* Paint the screen during normal gameplay
