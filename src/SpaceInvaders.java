@@ -1,5 +1,6 @@
 // utility
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 // graphics
@@ -38,7 +39,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private ArrayList<Alien> goldhammer;
     private ArrayList<Alien> haterz;
 
-    private Projectile shooty;
+    private List<Projectile> shooty;
 
     private ArrayList<GraphicsObject> objects;
     // FIXME list your game objects here
@@ -94,8 +95,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             spaceinbetween += 40;
         }
 
-        this.shooty = new Projectile(me.x, me.y);
+        //this.shooty = new Projectile(me.x, me.y);
         this.objects = new ArrayList<GraphicsObject>();
+        shooty = new ArrayList<Projectile>();
         // FIXME initialize your game objects
     }
 
@@ -196,12 +198,12 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             me.speed_x = -7;
-            shooty.speed_x = -7;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             me.speed_x = 7;
-            shooty.speed_x = 7;
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            shooty.speed_y = -7;
+            Projectile new_shooty = new Projectile(me.x, me.y);
+            new_shooty.speed_y = -7;
+            shooty.add(new_shooty);
             // FIXME what happens when space bar is pressed
         }
     }
@@ -210,7 +212,15 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     private void update() {
         me.update(this.canvasWidth, this.canvasHeight, frame);
-        shooty.update(this.canvasWidth, this.canvasHeight, frame);
+        for (Projectile w : this.shooty) {
+            w.update(this.canvasWidth, this.canvasHeight, frame);
+        }
+        for (Alien x : this.joshi){
+            x.update(this.canvasWidth, this.canvasHeight, frame);
+            for (Projectile w : this.shooty) {
+                if ()
+            }
+        }
         for (Alien s : this.joshi){
             s.update(this.canvasWidth, this.canvasHeight, frame);
         }
@@ -236,6 +246,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         return false; // FIXME delete this when ready
     }
 
+    private boolean Projectile_touching_Alien(Alien, Projectile){
+        if Alien(Green,)
+        return true;
+    }
+
     /* Paint the screen during normal gameplay
      *
      * @param g The Graphics for the JPanel
@@ -247,8 +262,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         for (Alien s: joshi) {
             s.draw(g);
         }
-        this.shooty.draw(g);
-        
+        for (Projectile w: shooty){
+        w.draw(g);
+        }
 
     }
 
@@ -284,6 +300,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         g.setFont(tr);
         g.drawString("You lost :(", 250, 220);
         // FIXME draw the game over screen here
+    }
+
+    private void paintAlien (Graphics g){
+        g.fillRect(Alien);
+        g.setColor(Color.BLACK);
     }
 
     public static void main(String[] args) {
