@@ -33,11 +33,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
     private Player me;
     public int alien_height;
+    public int num_aliens_per_list;
 
     private ArrayList<Alien> joshi;
     private ArrayList<Alien> conner;
     private ArrayList<Alien> goldhammer;
-    private ArrayList<Alien> haterz;
 
     private Projectile shooty;
 
@@ -58,42 +58,35 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         this.timer = new Timer(msPerFrame, this);
 
         this.me = new Player(300, 375);
+        this.num_aliens_per_list = 10;
 
         this.joshi = new ArrayList<>();
         int num_aliens = 0;
         int i = 0;
-        while (num_aliens < 10) {
-            joshi.add(new Alien( i, 0));
+        while (num_aliens < num_aliens_per_list) {
+            joshi.add(new Alien( i, 0, Color.green));
             num_aliens += 1;
             i += 60;
         }
 
         this.conner = new ArrayList<>();
-        int sproot = 0;
-        int toot = 0;
-        while (sproot < 10) {
-            conner.add(new Alien(toot, 0));
-            sproot += 1;
-            toot += 60;
+        int alienz = 0;
+        int spaceinbetween = 0;
+        while (alienz < num_aliens_per_list) {
+            conner.add(new Alien(spaceinbetween, 0, Color.BLUE));
+            alienz += 1;
+            spaceinbetween += 60;
         }
 
         this.goldhammer = new ArrayList<>();
         int poop = 0;
         int ploop = 0;
-        while (poop < 10) {
-            goldhammer.add(new Alien(ploop, 0));
+        while (poop < num_aliens_per_list) {
+            goldhammer.add(new Alien(ploop, 0, Color.pink));
             poop += 1;
             ploop += 60;
         }
 
-        this.haterz = new ArrayList<>();
-        int alienz = 0;
-        int spaceinbetween = 0;
-        while (alienz < 10) {
-            haterz.add(new Alien(spaceinbetween, 0));
-            alienz += 1;
-            spaceinbetween += 60;
-        }
 
         this.shooty = new Projectile(me.x, me.y);
         this.objects = new ArrayList<GraphicsObject>();
@@ -225,6 +218,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                 w.update(this.canvasWidth, this.canvasHeight, frame);
             }
         }
+        if (conner.get(0).y + this.alien_height >120) {
+            for (Alien w : this.goldhammer){
+                w.update(this.canvasWidth, this.canvasHeight, frame);
+            }
+        }
 
         // FIXME update game objects here
     }
@@ -235,14 +233,34 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      */
     private boolean hasLostGame() {
         if (joshi != null && !joshi.isEmpty()) {
-            if (joshi.get(0).y + this.alien_height > canvasHeight) {
-                return true;
+            int attempts = 0;
+            while (attempts < num_aliens_per_list) {
+                if (joshi.get(attempts).y + this.alien_height > canvasHeight) {
+                    return true;
+                }
+                attempts += 1;
             }
-            //when it touches the bottom show lose screen
-            //}
-
         }
-        return false; // FIXME delete this when ready
+        else if (conner != null && !conner.isEmpty()) {
+            int attempts = 0;
+            while (attempts < num_aliens_per_list) {
+                if (conner.get(0).y + this.alien_height > canvasHeight) {
+                    return true;
+                }
+                attempts += 1;
+            }
+        }
+        else if (goldhammer != null && !goldhammer.isEmpty()) {
+            int attemts = 0;
+            while (attemts < num_aliens_per_list) {
+                if (goldhammer.get(0).y + this.alien_height > canvasHeight) {
+                    return true;
+                }
+                attemts += 1;
+            }
+        }
+        return false;
+        // FIXME delete this when ready
     }
 
 
@@ -269,6 +287,11 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         if (joshi.get(0).y + this.alien_height > 120) {
             for (Alien w : conner) {
                 w.draw(g);
+            }
+        }
+        if (conner.get(0).y + this.alien_height > 120) {
+            for (Alien t : goldhammer) {
+                t.draw(g);
             }
         }
 
