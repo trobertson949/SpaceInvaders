@@ -9,6 +9,7 @@ public class alienProjectile extends GraphicsObject {
 
     public alienProjectile(double x, double y) {
         super(x, y);
+        speed_y = 2;
         alien_projectile_color = Color.CYAN;
         alien_projectile_height = 15;
         alien_projectile_width = 2;
@@ -22,6 +23,7 @@ public class alienProjectile extends GraphicsObject {
     }
 
     public void update(int pic_width, int pic_height, int frame) {
+
         // let the superclass' update function handle the actual changes to x and y
         super.update(pic_width, pic_height, frame);
     }
