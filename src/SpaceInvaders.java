@@ -34,12 +34,15 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Player me;
     public int alien_height;
     public int num_aliens_per_list;
+    public int alienbullets;
 
     private ArrayList<Alien> joshi;
     private ArrayList<Alien> conner;
     private ArrayList<Alien> goldhammer;
 
     private Projectile shooty;
+    private ArrayList<alienProjectile> splat;
+
 
     private ArrayList<GraphicsObject> objects;
     // FIXME list your game objects here
@@ -59,6 +62,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.me = new Player(300, 375);
         this.num_aliens_per_list = 10;
+        this.alienbullets = 10;
 
         this.joshi = new ArrayList<>();
         int num_aliens = 0;
@@ -90,6 +94,15 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.shooty = new Projectile(me.x, me.y);
         this.objects = new ArrayList<GraphicsObject>();
+
+
+
+        splat = new ArrayList<alienProjectile>();
+        int numprojectiles = 0;
+        while (numprojectiles < alienbullets){
+            splat.add(new alienProjectile(0, 0));
+            numprojectiles += 1;
+        }
 
         // FIXME initialize your game objects
     }
@@ -207,9 +220,15 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private void update() {
         me.update(this.canvasWidth, this.canvasHeight, frame);
         shooty.update(this.canvasWidth, this.canvasHeight, frame);
+
         for (Alien s : this.joshi){
             s.update(this.canvasWidth, this.canvasHeight, frame);
         }
+
+        for (alienProjectile s: this.splat) {
+            s.update(this.canvasWidth, this.canvasHeight, frame);
+        }
+
         for (GraphicsObject obj : this.objects) {
             obj.update(this.canvasWidth, this.canvasHeight, frame);
         }
@@ -269,6 +288,48 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @returns  true if the player has won, false otherwise
      */
     private boolean hasWonGame() {
+//        if (joshi == null && joshi.isEmpty()) {
+//            int attempts = 0;
+//            while (attempts < num_aliens_per_list) {
+//                if (joshi.get(attempts).y + this.alien_height > canvasHeight) {
+//                }
+//                attempts += 1;
+//            }
+//            if (conner == null && conner.isEmpty()) {
+//                int poop = 0;
+//                while (poop < num_aliens_per_list) {
+//                    if (conner.get(0).y + this.alien_height > canvasHeight) {
+//                    }
+//                    poop += 1;
+//                }
+//                if (goldhammer == null && goldhammer.isEmpty()) {
+//                    int spoop = 0;
+//                    while (spoop < num_aliens_per_list) {
+//                        if (goldhammer.get(0).y + this.alien_height > canvasHeight) {
+//                        return true;}
+//                        spoop += 1;
+//                    }
+//                }
+//            }
+//        }
+//        else if (conner != null && !conner.isEmpty()) {
+//            int attempts = 0;
+//            while (attempts < num_aliens_per_list) {
+//                if (conner.get(0).y + this.alien_height > canvasHeight) {
+//                    return true;
+//                }
+//                attempts += 1;
+//            }
+//        }
+//        else if (goldhammer != null && !goldhammer.isEmpty()) {
+//            int attemts = 0;
+//            while (attemts < num_aliens_per_list) {
+//                if (goldhammer.get(0).y + this.alien_height > canvasHeight) {
+//                    return true;
+//                }
+//                attemts += 1;
+//            }
+//        }
         return false; // FIXME delete this when ready
     }
 
@@ -284,6 +345,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             s.draw(g);
         }
         this.shooty.draw(g);
+        for (alienProjectile s: splat){
+            s.draw(g);
+        }
         if (joshi.get(0).y + this.alien_height > 120) {
             for (Alien w : conner) {
                 w.draw(g);
