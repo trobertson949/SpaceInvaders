@@ -10,10 +10,10 @@ public class Alien extends GraphicsObject {
     int alien_height;
 
 
-    public Alien (double x, double y) {
+    public Alien (double x, double y, Color alien_color) {
         super(x, y);
         speed_x = 3;
-        alien_color = Color.green;
+        this.alien_color = alien_color;
         alien_width = 30;
         alien_height = 30;
     }

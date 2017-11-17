@@ -44,7 +44,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
     private ArrayList<GraphicsObject> objects;
     // FIXME list your game objects here
-    
+
 
     /* Constructor for a Space Invaders game
      */
@@ -64,12 +64,12 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         int num_aliens = 0;
         int i = 0;
         while (num_aliens < 10) {
-            joshi.add(new Alien( i, 0));
+            joshi.add(new Alien( i, 0, Color.yellow));
             num_aliens += 1;
             i += 60;
         }
 
-        this.conner = new ArrayList<>();
+      /*  this.conner = new ArrayList<>();
         int sproot = 0;
         int toot = 0;
         while (sproot < 10) {
@@ -95,6 +95,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             alienz += 1;
             spaceinbetween += 60;
         }
+        */
 
         //this.shooty = new Projectile(me.x, me.y);
         this.objects = new ArrayList<GraphicsObject>();
@@ -173,7 +174,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     /* Respond to key release events
      *
      * A key release is when you let go of a key
-     * 
+     *
      * @param e  An object describing what key was released
      */
     public void keyReleased(KeyEvent e) {
@@ -183,7 +184,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     /* Respond to key type events
      *
      * A key type is when you press then let go of a key
-     * 
+     *
      * @param e  An object describing what key was typed
      */
     public void keyTyped(KeyEvent e) {
@@ -193,7 +194,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     /* Respond to key press events
      *
      * A key type is when you press then let go of a key
-     * 
+     *
      * @param e  An object describing what key was typed
      */
     public void keyPressed(KeyEvent e) {
@@ -249,7 +250,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
 
     /* Check if the player has won the game
-     * 
+     *
      * @returns  true if the player has won, false otherwise
      */
     private boolean hasWonGame() {
@@ -259,7 +260,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private void Projectile_touching_Alien(ArrayList<Alien> joshi, ArrayList<Projectile> shooty) {
         for (int i = 0; i < joshi.size(); i++ ) {
             for (int j = 0; j < shooty.size(); j++) {
-                if ((shooty.get(j).x + 2 >= joshi.get(i).x) && (shooty.get(j).y <= joshi.get(i).y+2)) {
+                // if ((shooty.get(j).x + 2 >= joshi.get(i).x + 30) && (shooty.get(j).y  <= joshi.get(i).y+2)) {
+                if ((shooty.get(j).y >= joshi.get(i).y) && (shooty.get(j).y <= joshi.get(i).y + 30) &&
+                        (shooty.get(j).x >= joshi.get(i).x) && (shooty.get(j).x)<= joshi.get(i).x +30) {
                     Alien gone_joshi = joshi.get(i);
                     joshi.remove(gone_joshi);
                     Projectile gone_shooty = shooty.get(j);
