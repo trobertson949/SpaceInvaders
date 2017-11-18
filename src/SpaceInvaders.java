@@ -45,6 +45,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private ArrayList<alienProjectile> splat;
     private ArrayList<GraphicsObject> objects;
 
+    public int random_alien;
+
 
 
 
@@ -237,6 +239,17 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             w.update(this.canvasWidth, this.canvasHeight, frame);
         }
 
+        if (joshi.get(0).y + this.alien_height == 60 && joshi.get(0).x < 1) {
+            int attack = 0;
+            while (attack < 4) {
+                random_alien = (int) (Math.random() * (joshi.size()));
+                alienProjectile new_splat = new alienProjectile((int) (joshi.get(random_alien).x), (int) (joshi.get(random_alien).y));
+                splat.add(new_splat);
+                attack += 1;
+            }
+        }
+
+
         Projectile_touching_Alien(joshi,shooty);
 
         // FIXME update game objects here
@@ -302,7 +315,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         for (int i = 0; i < this.conner.size(); i++ ) {
             for (int j = 0; j < this.shooty.size(); j++) {
                 if ((this.shooty.get(j).y >= this.conner.get(i).y) && (this.shooty.get(j).y <= this.conner.get(i).y + 30) &&
-                        (this.shooty.get(j).x >= this.conner.get(i).x) && (this.shooty.get(j).x)<= this.conner.get(i).x +30) {
+                        (this.shooty.get(j).x >= this.conner.get(i).x) && (this.shooty.get(j).x<= this.conner.get(i).x +30)) {
                     Alien gone_conner = this.conner.get(i);
                     this.conner.remove(gone_conner);
                     Projectile gone_shooty = this.shooty.get(j);

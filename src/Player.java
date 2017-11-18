@@ -26,7 +26,7 @@ public class Player extends GraphicsObject {
     public void update(int pic_width, int pic_height, int frame) {
         // this will make rectangles bounce off the side of the window
 
-        if (this.x < 0 || this.x > pic_width) {
+        if (this.x < 0 || this.x + this.player_width > pic_width) {
             this.speed_x = -this.speed_x;
         }
         if (this.y < 0 || this.y + this.player_height > pic_height) {
