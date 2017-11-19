@@ -62,43 +62,44 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         // set the drawing timer
         this.timer = new Timer(msPerFrame, this);
 
-        this.me = new Player(300, 375);
         this.num_aliens_per_list = 10;
         this.alienbullets = 10;
 
         this.joshi = new ArrayList<>();
         int num_aliens = 0;
         int i = 30;
-        joshi.add(new Alien (0, 0, Color.BLUE));
         while (num_aliens < num_aliens_per_list) {
             joshi.add(new Alien( i, 0, Color.green));
             num_aliens += 1;
             i += 60;
         }
+        joshi.add(new Alien (0, 0, Color.BLACK));
 
         this.conner = new ArrayList<>();
         int alienz = 0;
         int spaceinbetween = 30;
-        conner.add(new Alien (0, 0, Color.BLUE));
         while (alienz < num_aliens_per_list) {
             conner.add(new Alien(spaceinbetween, 0, Color.BLUE));
             alienz += 1;
             spaceinbetween += 60;
         }
+        conner.add(new Alien (0, 0, Color.BLACK));
 
         this.goldhammer = new ArrayList<>();
         int poop = 0;
         int ploop = 30;
-        goldhammer.add(new Alien (0, 0, Color.BLUE));
         while (poop < num_aliens_per_list) {
             goldhammer.add(new Alien(ploop, 0, Color.pink));
             poop += 1;
             ploop += 60;
         }
+        goldhammer.add(new Alien (0, 0, Color.BLACK));
 
         this.objects = new ArrayList<GraphicsObject>();
         this.shooty = new ArrayList<Projectile>();
         this.splat = new ArrayList<alienProjectile>();
+
+        this.me = new Player(300, 375);
         // FIXME initialize your game objects
     }
 
@@ -222,17 +223,16 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             s.update(this.canvasWidth, this.canvasHeight, frame);
         }
 
-        if (joshi.get(0).y + this.alien_height > 120 || joshi.isEmpty() || joshi==null) {
+        if (joshi.get(0).y + this.alien_height > 120) {
             for (Alien w : this.conner){
                 w.update(this.canvasWidth, this.canvasHeight, frame);
             }
         }
-        if (conner.get(0).y + this.alien_height >120 || conner.isEmpty() || conner == null) {
-            for (Alien w : this.goldhammer){
+        if (conner.get(0).y + this.alien_height >120) {
+            for (Alien w : this.goldhammer) {
                 w.update(this.canvasWidth, this.canvasHeight, frame);
             }
         }
-
 
         for (GraphicsObject obj : this.objects) {
             obj.update(this.canvasWidth, this.canvasHeight, frame);
@@ -285,35 +285,6 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @returns  true if the player has lost, false otherwise
      */
     private boolean hasLostGame() {
-        if (joshi != null && !joshi.isEmpty()) {
-            int attempts = 0;
-            while (attempts < joshi.size()) {
-                if (joshi.get(attempts).y + this.alien_height > canvasHeight) {
-                    return true;
-                }
-                attempts += 1;
-            }
-        }
-        else if (conner != null && !conner.isEmpty()) {
-            int attempt = 0;
-            while (attempt < conner.size()) {
-                if (conner.get(attempt).y + this.alien_height > canvasHeight) {
-                    return true;
-                }
-                attempt += 1;
-            }
-        }
-        else if (goldhammer != null && !goldhammer.isEmpty()) {
-            int att = 0;
-            while (att < goldhammer.size()) {
-                if (goldhammer.get(att).y + this.alien_height > canvasHeight) {
-                    return true;
-                }
-                att += 1;
-            }
-        }
-
-
         for (int i = 0; i < splat.size(); i++) {
             if (this.splat.get(i).y + 15 >= this.me.y && this.splat.get(i).y <= this.me.y + 25
                     && this.splat.get(i).x >= this.me.x && this.splat.get(i).x <= this.me.x + 20) {
@@ -327,6 +298,20 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                     alienbullets = 1;
                 }
             }
+
+        for (int i = 1; i < conner.size(); i++) {
+            if (this.conner.get(i).y + 30 >= this.me.y && this.conner.get(i).y <= this.me.y + 25
+                    && this.conner.get(i).x + 30 >= this.me.x && this.conner.get(i).x <= this.me.x + 20) {
+                alienbullets = 1;
+            }
+        }
+
+        for (int i = 1; i < goldhammer.size(); i++) {
+            if (this.goldhammer.get(i).y + 30 >= this.me.y && this.goldhammer.get(i).y <= this.me.y + 25
+                    && this.goldhammer.get(i).x + 30 >= this.me.x && this.goldhammer.get(i).x <= this.me.x + 20) {
+                alienbullets = 1;
+            }
+        }
 
         if (alienbullets == 1) {
             return true;
@@ -342,7 +327,14 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
      * @returns  true if the player has won, false otherwise
      */
     private boolean hasWonGame() {
-        return false; // FIXME delete this when ready
+        int joshi_list_length = this.joshi.size();
+        int conner_list_length = this.conner.size();
+        int goldhammer_list_length = this.goldhammer.size();
+        if ((joshi_list_length == 1) && (conner_list_length == 1) && (goldhammer_list_length == 1)) {
+            return true;
+        } else {
+            return false; // FIXME delete this when ready
+        }
     }
 
     private void Projectile_touching_Alien(ArrayList<Alien> joshi, ArrayList<Projectile> shooty) {
@@ -358,7 +350,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                 }
             }
         }
-        if (this.joshi.get(0).y + this.alien_height > 120 || this.joshi.isEmpty()) {
+
+        if (this.joshi.get(0).y + this.alien_height > 120) {
             for (int i = 0; i < this.conner.size() - 1; i++) {
                 for (int j = 0; j < this.shooty.size() - 1; j++) {
                     if ((this.shooty.get(j).y >= this.conner.get(i).y) && (this.shooty.get(j).y <= this.conner.get(i).y + 30) &&
@@ -371,7 +364,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                 }
             }
         }
-        if (this.conner.get(0).y + this.alien_height > 120 || this.conner.isEmpty()) {
+        if (this.conner.get(0).y + this.alien_height > 120) {
             for (int i = 0; i < this.goldhammer.size() - 1; i++) {
                 for (int j = 0; j < this.shooty.size() - 1; j++) {
                     if ((this.shooty.get(j).y >= this.goldhammer.get(i).y) && (this.shooty.get(j).y <= this.goldhammer.get(i).y + 30) &&
@@ -397,7 +390,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 //                }
 //            }
 //        }
-//    }
+
 
     /* Paint the screen during normal gameplay
      *
@@ -419,7 +412,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         }
 
 
-        if (joshi.get(0).y + this.alien_height > 120 || joshi.isEmpty() || joshi==null) {
+        if (joshi.get(0).y + this.alien_height > 120) {
             for (Alien w : conner) {
                 w.draw(g);
             }
@@ -427,7 +420,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         }
 
 
-        if (conner.get(0).y + this.alien_height > 120 || conner.isEmpty() || conner == null) {
+        if (conner.get(0).y + this.alien_height > 120) {
                 for (Alien t : goldhammer) {
                     t.draw(g);
                 }
