@@ -35,7 +35,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     private Player me;
     public int alien_height;
     public int num_aliens_per_list;
-//    public int alienbullets;
+    public int alienbullets;
 
     private ArrayList<Alien> joshi;
     private ArrayList<Alien> conner;
@@ -64,7 +64,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.me = new Player(300, 375);
         this.num_aliens_per_list = 10;
-//        this.alienbullets = 10;
+        this.alienbullets = 10;
 
         this.joshi = new ArrayList<>();
         int num_aliens = 0;
@@ -78,7 +78,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.conner = new ArrayList<>();
         int alienz = 0;
-        int spaceinbetween = 0;
+        int spaceinbetween = 30;
+        conner.add(new Alien (0, 0, Color.BLUE));
         while (alienz < num_aliens_per_list) {
             conner.add(new Alien(spaceinbetween, 0, Color.BLUE));
             alienz += 1;
@@ -87,7 +88,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
         this.goldhammer = new ArrayList<>();
         int poop = 0;
-        int ploop = 0;
+        int ploop = 30;
+        goldhammer.add(new Alien (0, 0, Color.BLUE));
         while (poop < num_aliens_per_list) {
             goldhammer.add(new Alien(ploop, 0, Color.pink));
             poop += 1;
@@ -315,10 +317,20 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         for (int i = 0; i < splat.size(); i++) {
             if (this.splat.get(i).y + 15 >= this.me.y && this.splat.get(i).y <= this.me.y + 25
                     && this.splat.get(i).x >= this.me.x && this.splat.get(i).x <= this.me.x + 20) {
-                return true;
+                alienbullets = 1;
             }
         }
 
+        for (int i = 1; i < joshi.size(); i++) {
+                if (this.joshi.get(i).y + 30 >= this.me.y && this.joshi.get(i).y <= this.me.y + 25
+                        && this.joshi.get(i).x + 30 >= this.me.x && this.joshi.get(i).x <= this.me.x + 20) {
+                    alienbullets = 1;
+                }
+            }
+
+        if (alienbullets == 1) {
+            return true;
+        }
 
         return false;
         // FIXME delete this when ready
@@ -334,6 +346,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     }
 
     private void Projectile_touching_Alien(ArrayList<Alien> joshi, ArrayList<Projectile> shooty) {
+
         for (int i = 0; i < this.joshi.size() - 1; i++) {
             for (int j = 0; j < this.shooty.size() - 1; j++) {
                 if ((this.shooty.get(j).y >= this.joshi.get(i).y) && (this.shooty.get(j).y <= this.joshi.get(i).y + 30) &&
@@ -345,41 +358,46 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                 }
             }
         }
-        for (int i = 0; i < this.conner.size() - 1; i++) {
-            for (int j = 0; j < this.shooty.size() - 1; j++) {
-                if ((this.shooty.get(j).y >= this.conner.get(i).y) && (this.shooty.get(j).y <= this.conner.get(i).y + 30) &&
-                        (this.shooty.get(j).x >= this.conner.get(i).x) && (this.shooty.get(j).x <= this.conner.get(i).x + 30)) {
-                    Alien gone_conner = this.conner.get(i);
-                    this.conner.remove(gone_conner);
-                    Projectile gone_shooty = this.shooty.get(j);
-                    this.shooty.remove(gone_shooty);
+        if (this.joshi.get(0).y + this.alien_height > 120 || this.joshi.isEmpty()) {
+            for (int i = 0; i < this.conner.size() - 1; i++) {
+                for (int j = 0; j < this.shooty.size() - 1; j++) {
+                    if ((this.shooty.get(j).y >= this.conner.get(i).y) && (this.shooty.get(j).y <= this.conner.get(i).y + 30) &&
+                            (this.shooty.get(j).x >= this.conner.get(i).x) && (this.shooty.get(j).x <= this.conner.get(i).x + 30)) {
+                        Alien gone_conner = this.conner.get(i);
+                        this.conner.remove(gone_conner);
+                        Projectile gone_shooty = this.shooty.get(j);
+                        this.shooty.remove(gone_shooty);
+                    }
                 }
             }
         }
-        for (int i = 0; i < this.goldhammer.size() - 1; i++) {
-            for (int j = 0; j < this.shooty.size() - 1; j++) {
-                if ((this.shooty.get(j).y >= this.goldhammer.get(i).y) && (this.shooty.get(j).y <= this.goldhammer.get(i).y + 30) &&
-                        (this.shooty.get(j).x >= this.goldhammer.get(i).x) && (this.shooty.get(j).x) <= this.goldhammer.get(i).x + 30) {
-                    Alien gone_goldhammer = this.goldhammer.get(i);
-                    this.goldhammer.remove(gone_goldhammer);
-                    Projectile gone_shooty = this.shooty.get(j);
-                    this.shooty.remove(gone_shooty);
-                }
-            }
-        }
-
-        if (this.joshi.size() == 1) {
-            for (int j = 0; j < this.shooty.size(); j++) {
-                if ((this.shooty.get(j).y >= this.goldhammer.get(0).y) && (this.shooty.get(j).y <= this.goldhammer.get(0).y + 30) &&
-                        (this.shooty.get(j).x >= this.goldhammer.get(0).x) && (this.shooty.get(j).x) <= this.goldhammer.get(0).x + 30) {
-                    Alien gone_goldhammer = this.goldhammer.get(0);
-                    this.goldhammer.remove(gone_goldhammer);
-                    Projectile gone_shooty = this.shooty.get(j);
-                    this.shooty.remove(gone_shooty);
+        if (this.conner.get(0).y + this.alien_height > 120 || this.conner.isEmpty()) {
+            for (int i = 0; i < this.goldhammer.size() - 1; i++) {
+                for (int j = 0; j < this.shooty.size() - 1; j++) {
+                    if ((this.shooty.get(j).y >= this.goldhammer.get(i).y) && (this.shooty.get(j).y <= this.goldhammer.get(i).y + 30) &&
+                            (this.shooty.get(j).x >= this.goldhammer.get(i).x) && (this.shooty.get(j).x) <= this.goldhammer.get(i).x + 30) {
+                        Alien gone_goldhammer = this.goldhammer.get(i);
+                        this.goldhammer.remove(gone_goldhammer);
+                        Projectile gone_shooty = this.shooty.get(j);
+                        this.shooty.remove(gone_shooty);
+                    }
                 }
             }
         }
     }
+
+//        if (this.joshi.size() == 1) {
+//            for (int j = 0; j < this.shooty.size(); j++) {
+//                if ((this.shooty.get(j).y >= this.goldhammer.get(0).y) && (this.shooty.get(j).y <= this.goldhammer.get(0).y + 30) &&
+//                        (this.shooty.get(j).x >= this.goldhammer.get(0).x) && (this.shooty.get(j).x) <= this.goldhammer.get(0).x + 30) {
+//                    Alien gone_goldhammer = this.goldhammer.get(0);
+//                    this.goldhammer.remove(gone_goldhammer);
+//                    Projectile gone_shooty = this.shooty.get(j);
+//                    this.shooty.remove(gone_shooty);
+//                }
+//            }
+//        }
+//    }
 
     /* Paint the screen during normal gameplay
      *
